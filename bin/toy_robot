@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift(File.expand_path("../lib", __dir__))
+require "toy_robot/controller"
+
+# Usage:
+#   bin/toy_robot commands.txt
+
+input_lines =
+  if ARGV[0]
+    File.readlines(ARGV[0], chomp: true)
+  else
+    STDIN.each_line.map(&:chomp)
+  end
+
+controller = ToyRobot::Controller.new(width: 5, height: 5)
+outputs = controller.run(input_lines)

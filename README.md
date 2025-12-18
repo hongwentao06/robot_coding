@@ -3,7 +3,7 @@
 ## Overview
 This project implements the **Toy Robot Coding Challenge**, a command-line simulation of a toy robot moving on a **5×5 tabletop**.
 
-The application processes a sequence of commands and ensures the robot never falls off the table.  
+The application processes a sequence of commands and ensures the robot never falls off the table.
 The solution is implemented in **Ruby** and designed with a clear separation of concerns to make the logic easy to understand, test, and extend.
 
 ---
@@ -55,3 +55,30 @@ The application is a simulation of a toy robot moving on a square tabletop, of d
 - Invalid moves (including invalid placement) are ignored
 
 ---
+## 📦 Installation
+
+```bash
+git clone https://github.com/your/repo.git
+cd robot_coding
+bundle install
+
+Ensure Ruby 3.x is used:
+
+```bash
+ruby -v
+
+## ▶️ Running With a File
+Create a file named commands.txt:
+```bash
+PLACE 1,2,EAST
+MOVE
+MOVE
+LEFT
+MOVE
+REPORT
+
+Run the controller:
+bin/toy_robot commands.txt
+
+## OUTPUT
+3,3,NORTH
