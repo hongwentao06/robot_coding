@@ -21,17 +21,17 @@ module ToyRobot
 
       place_command = input.match(PLACE_REGEX)
 
-      return [:place, { x: place_command[1].to_i, y: place_command[2].to_i, facing: place_command[3].upcase }] if place_command
+      return [ :place, { x: place_command[1].to_i, y: place_command[2].to_i, facing: place_command[3].upcase } ] if place_command
 
       case input.upcase
       when "MOVE"
-        [:move, {}]
+        [ :move, {} ]
       when "LEFT"
-        [:left, {}]
+        [ :left, {} ]
       when "RIGHT"
-        [:right, {}]
+        [ :right, {} ]
       when "REPORT"
-        [:report, {}]
+        [ :report, {} ]
       else
         nil
       end

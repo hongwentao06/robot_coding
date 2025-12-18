@@ -14,7 +14,7 @@ module ToyRobot
       @facing = nil
     end
 
-    def place(x: , y:, facing:)
+    def place(x:, y:, facing:)
       return false unless DIRECTIONS.include?(facing)
 
       @x = x
@@ -26,7 +26,7 @@ module ToyRobot
     end
 
     def placed?
-      [x, y, facing].all?
+      [ x, y, facing ].all?
     end
 
     def left
@@ -35,9 +35,9 @@ module ToyRobot
       new_index = facing_index - 1
       @facing = if new_index >= 0
                   DIRECTIONS[new_index]
-                else
+      else
                   DIRECTIONS.last
-                end
+      end
     end
 
     def right
@@ -46,9 +46,9 @@ module ToyRobot
       new_index = facing_index + 1
       @facing = if new_index < DIRECTIONS.length
                   DIRECTIONS[new_index]
-                else
+      else
                   DIRECTIONS.first
-                end
+      end
     end
 
 
@@ -65,8 +65,6 @@ module ToyRobot
       when "WEST"
         { x: x - 1, y: y }
       end
-
-
     end
 
     def move(x:, y:)

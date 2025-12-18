@@ -5,7 +5,7 @@ RSpec.describe ToyRobot::Controller do
 
   describe "#run" do
     it "handles PLACE 0,0,NORTH → MOVE → REPORT" do
-      commands = ["PLACE 0,0,NORTH", "MOVE", "REPORT"]
+      commands = [ "PLACE 0,0,NORTH", "MOVE", "REPORT" ]
 
       expect { controller.run(commands) }
         .to output("0, 1, NORTH\n")
@@ -13,7 +13,7 @@ RSpec.describe ToyRobot::Controller do
     end
 
     it "handles LEFT rotation" do
-      commands = ["PLACE 0,0,NORTH", "LEFT", "REPORT"]
+      commands = [ "PLACE 0,0,NORTH", "LEFT", "REPORT" ]
 
       expect { controller.run(commands) }
         .to output("0, 0, WEST\n")
@@ -36,7 +36,7 @@ RSpec.describe ToyRobot::Controller do
     end
 
     it "prevents falling off the table" do
-      commands = ["PLACE 0,0,SOUTH", "MOVE", "REPORT"]
+      commands = [ "PLACE 0,0,SOUTH", "MOVE", "REPORT" ]
 
       expect { controller.run(commands) }
         .to output("0, 0, SOUTH\n")
