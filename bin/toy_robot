@@ -5,9 +5,6 @@ require "toy_robot/controller"
 
 # Usage:
 #   bin/toy_robot commands.txt
-#   cat commands.txt | bin/toy_robot
-#
-# Prints each REPORT line as it occurs.
 
 input_lines =
   if ARGV[0]
